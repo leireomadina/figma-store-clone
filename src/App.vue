@@ -1,7 +1,17 @@
 <template>
-  <RouterView />
+  <default-layout>
+    <RouterView />
+  </default-layout>
 </template>
 
-<script setup>
+<script>
 import { RouterView } from "vue-router";
+import DefaultLayout from "./layouts/DefaultLayout.vue";
+
+export default {
+  components: {
+    RouterView,
+    DefaultLayout,
+  },
+};
 </script>

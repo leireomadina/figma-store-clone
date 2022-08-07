@@ -1,5 +1,3 @@
 <template>
-  <main>
-    <h1>Products Page</h1>
-  </main>
+  <h1>Products Page</h1>
 </template>
