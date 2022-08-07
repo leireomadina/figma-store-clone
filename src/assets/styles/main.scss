@@ -1,37 +1,30 @@
 // core
 @import "../styles/core/typography.scss";
 @import "../styles/core/mixins.scss";
+@import "../styles/core/functions.scss";
 @import "../styles/core/normalize.scss";
 @import "../styles/core/reset.scss";
 @import "../styles/core/variables.scss";
 
+html, body {
+  height: 100%;
+}
+
 body {
-  min-height: 100vh;
-  line-height: 1.6;
   font-family: 'White inktrap bold', Arial, sans-serif;
-  font-size: 32px;
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:  $main-color;
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+main {
+  flex-grow: 1;
+  padding: 0 toRem(20px);
 }
