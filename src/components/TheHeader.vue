@@ -1,17 +1,30 @@
+<!-- eslint-disable prettier/prettier -->
 <template>
-  <header role="heading">
-    <div class="header">
+  <header :class="{'full-screen': isMenuOpen}" role="banner" aria-label="Header">
+    <div :class="['header', {'header--light': isMenuOpen}]">
       <div class="header__nav-container">
-        <nav role="navigation" aria-label="Mobile hamburguer menu">
-          <button class="hamburger-menu" aria-expanded="true">
+        <nav class="hamburger-menu" role="navigation" aria-label="Figma Store">
+          <button
+            type="button"
+            id="main-menu"
+            class="hamburger-menu__btn"
+            title="Open the menu"
+            :aria-expanded="isAriaExpanded"
+            aria-haspopup="true"
+            aria-controls="main-menu"
+            @click.prevent="toggleMenu"
+          >
             <div class="hamburger-menu__container">
-              <span class="hamburger-menu__line"></span>
-              <span class="hamburger-menu__line"></span>
-              <span class="hamburger-menu__line"></span>
+              <span class="hamburger-menu__line" aria-hidden= true v-if="!isMenuOpen"></span>
+              <span class="hamburger-menu__line" aria-hidden= true v-if="!isMenuOpen"></span>
+              <span class="hamburger-menu__line" aria-hidden= true v-if="!isMenuOpen"></span>
+              <span class="hamburger-menu__cross" aria-hidden= true v-if="isMenuOpen"></span>
+              <span class="hamburger-menu__cross2" aria-hidden= true v-if="isMenuOpen"></span>
             </div>
           </button>
+          
         </nav>
-        <button class="search">
+        <button class="search" title="Search an item in our store">
           <img
             src="https://cdn.shopify.com/s/files/1/0576/8364/0503/t/4/assets/icon-search.static.svg?v=50573694"
             alt="Search an item in our store"
@@ -23,31 +36,90 @@
         <img
           src="@/assets/svg/logo-full.svg"
           alt="The Figma Store"
-          width="160"
+          class="logo"
         />
       </a>
       <div class="header__cart-container">
-        <img
-          src="@/assets/svg/location-icon.svg"
-          class="location"
-          alt="Select your location"
-        />
-        <button class="cart">0</button>
+        <a href="#" class="location" title="Select your location">
+          <img
+            src="@/assets/svg/location-icon.svg"
+            alt="Select your location"
+          />
+        </a>
+        <button class="cart" title="View the items in your cart">0</button>
       </div>
+    </div>
+    <div class="menu-modal">
+      <Transition>
+        <ul
+          id="main-menu"
+          class="menu-modal__list"
+          role="menubar"
+          aria-labelledby="main-menu"
+          aria-label="Figma Store"
+          v-if="isMenuOpen"   
+        >
+          <li role="none" class="menu-modal__list-item">
+            <a href="#" class="menu-modal__link" role="menuitem">Shop</a>
+          </li>
+          <li role="none" class="menu-modal__list-item">
+            <a href="#" class="menu-modal__link" role="menuitem">About</a>
+          </li>
+          <li role="none" class="menu-modal__list-item">
+            <a href="#" class="menu-modal__link--small" role="menuitem">Privacy & Terms</a>
+          </li>
+          <li role="none" class="menu-modal__list-item">
+            <a href="#" class="menu-modal__link--small" role="menuitem">Contact us</a>
+          </li>
+        </ul>
+    </Transition>
     </div>
   </header>
 </template>
+
+<script>
+import { ref, computed } from "vue";
+
+export default {
+  setup() {
+    const isAriaExpanded = ref(false);
+    const isMenuOpen = ref(false);
+
+    const convertToString = computed(function () {
+      return isAriaExpanded.value.toString();
+    });
+
+    const toggleMenu = () => {
+      isMenuOpen.value = !isMenuOpen.value;
+      isAriaExpanded.value = !isAriaExpanded.value;
+    };
+
+    return {
+      isAriaExpanded,
+      isMenuOpen,
+      convertToString,
+      toggleMenu,
+    };
+  },
+};
+</script>
 
 <style lang="scss">
 @import "@/assets/styles/core/_functions.scss";
 @import "@/assets/styles/core/_variables.scss";
 
 .header {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: toRem(10px) toRem(20px);
   background-color: $color-yellow;
+  transition: background-color 0.3s linear;
+
+  &--light {
+    background-color: $color-light;
+  }
 
   &__nav-container,
   &__cart-container {
@@ -57,9 +129,13 @@
 }
 
 .hamburger-menu {
-  cursor: pointer;
-  background-color: transparent;
-  border: transparent;
+  display: flex;
+
+  &__btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: transparent;
+  }
 
   &__container {
     width: 37px;
@@ -75,10 +151,24 @@
   &__line {
     width: 13px;
     border: 1px solid $color-dark;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease-in-out;
 
     &:not(:last-of-type) {
       margin-bottom: 2px;
     }
+  }
+
+  &__cross {
+    width: 15px;
+    border: 1px solid $color-dark;
+    transform: rotate(45deg) translate(1px, 1px);
+  }
+  &__cross2 {
+    width: 15px;
+    border: 1px solid $color-dark;
+    transform: rotate(315deg);
   }
 }
 
@@ -93,8 +183,9 @@
   }
 }
 
-.location {
-  cursor: pointer;
+.logo {
+  max-width: 160px;
+  height: auto;
 }
 
 .search,
@@ -103,16 +194,73 @@
 }
 
 .cart {
-  padding: toRem(10px) toRem(20px);
+  padding: toRem(9px) toRem(20px);
   background-color: transparent;
   border: 2px solid $color-dark;
   border-radius: 30px;
   cursor: pointer;
+  font-size: toRem(14px);
   transition: all 0.3s ease-out;
 
   &:hover {
     background-color: $color-dark;
     color: $color-light;
   }
+}
+.menu-modal {
+  height: auto;
+  width: 100%;
+  z-index: 1;
+  overflow: auto;
+  background-color: $color-light;
+  flex-grow: 1;
+
+  &__list {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(14px);
+    padding: toRem(60px) toRem(30px);
+  }
+
+  &__list-item:nth-of-type(2) {
+    margin-bottom: toRem(60px);
+  }
+
+  &__link {
+    font-size: toRem(45px);
+    font-weight: bold;
+    text-decoration: none;
+
+    &--small {
+      font-family: "White Regular";
+      font-size: toRem(18px);
+      font-weight: normal;
+      text-decoration: none;
+
+      &:visited {
+        color: $color-dark;
+      }
+    }
+
+    &:visited {
+      color: $color-dark;
+    }
+  }
+}
+
+.full-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s linear;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
