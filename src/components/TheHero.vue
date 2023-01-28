@@ -107,8 +107,8 @@ import svgSix from "../assets/svg/hero/6.svg?data";
 import svgSeven from "../assets/svg/hero/7.svg?data";
 import svgEight from "../assets/svg/hero/8.svg?data";
 
-// import { drag } from "../js/draggable-slider.js";
 import { ref, onMounted } from "vue";
+// import * as slider from "../../src/js/draggable-slider";
 
 export default {
   setup() {
