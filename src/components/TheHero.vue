@@ -204,9 +204,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/styles/core/_functions.scss";
-@import "@/assets/styles/core/_variables.scss";
-
 .hero {
   width: 100%;
   height: 100%;

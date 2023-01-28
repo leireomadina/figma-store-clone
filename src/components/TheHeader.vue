@@ -105,9 +105,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/styles/core/_functions.scss";
-@import "@/assets/styles/core/_variables.scss";
-
 .header {
   position: sticky;
   display: flex;
