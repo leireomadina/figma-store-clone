@@ -1,5 +1,5 @@
 <template>
-  <footer>This is the footer</footer>
+  <footer role="footer" aria-label="Footer">This is the footer</footer>
 </template>
 
 <style lang="scss">

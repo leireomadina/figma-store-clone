@@ -1,6 +1,6 @@
 <template>
   <the-header></the-header>
-  <main>
+  <main role="main" aria-label="Main page content">
     <slot></slot>
   </main>
   <the-footer></the-footer>

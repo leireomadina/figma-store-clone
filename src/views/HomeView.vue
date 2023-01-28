@@ -1,3 +1,13 @@
 <template>
-  <h1>Home Page</h1>
+  <TheHero />
 </template>
+
+<script>
+import TheHero from "../components/TheHero.vue";
+
+export default {
+  components: {
+    TheHero,
+  },
+};
+</script>
