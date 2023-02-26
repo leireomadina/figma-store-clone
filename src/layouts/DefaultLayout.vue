@@ -17,12 +17,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-nav {
-  color: lightgreen;
-}
-footer {
-  color: blue;
-}
-</style>
