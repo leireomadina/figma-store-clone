@@ -1,86 +1,78 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <header :class="{'full-screen': isMenuOpen}" role="banner" aria-label="Header">
-    <div :class="['header', {'header--light': isMenuOpen}]">
-      <div class="header__nav-container">
-        <nav class="hamburger-menu" role="navigation" aria-label="Figma Store">
-          <button
-            type="button"
-            id="main-menu"
-            class="hamburger-menu__btn"
-            title="Open the menu"
-            :aria-expanded="isAriaExpanded"
-            aria-haspopup="true"
-            aria-controls="main-menu"
-            @click.prevent="toggleMenu"
-          >
-            <div class="hamburger-menu__container">
-              <span class="hamburger-menu__line" aria-hidden= true v-if="!isMenuOpen"></span>
-              <span class="hamburger-menu__line" aria-hidden= true v-if="!isMenuOpen"></span>
-              <span class="hamburger-menu__line" aria-hidden= true v-if="!isMenuOpen"></span>
-              <span class="hamburger-menu__cross" aria-hidden= true v-if="isMenuOpen"></span>
-              <span class="hamburger-menu__cross2" aria-hidden= true v-if="isMenuOpen"></span>
-            </div>
-          </button>
-          
-        </nav>
-        <button class="search" title="Search an item in our store">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0576/8364/0503/t/4/assets/icon-search.static.svg?v=50573694"
-            alt="Search an item in our store"
-            class="search__image"
-          />
-        </button>
-      </div>
-      <a href="/" title="Go back to the home page">
-        <img
-          src="@/assets/svg/logo-full.svg"
-          alt="The Figma Store"
-          class="logo"
-        />
-      </a>
-      <div class="header__cart-container">
-        <a href="#" class="location" title="Select your location">
-          <img
-            src="@/assets/svg/location-icon.svg"
-            alt="Select your location"
-          />
-        </a>
-        <button class="cart" title="View the items in your cart">0</button>
-      </div>
-    </div>
-    <div class="menu-modal">
-      <Transition>
-        <ul
-          id="main-menu"
-          class="menu-modal__list"
-          role="menubar"
-          aria-labelledby="main-menu"
-          aria-label="Figma Store"
-          v-if="isMenuOpen"   
-        >
-          <li role="none" class="menu-modal__list-item">
-            <a href="#" class="menu-modal__link" role="menuitem">Shop</a>
-          </li>
-          <li role="none" class="menu-modal__list-item">
-            <a href="#" class="menu-modal__link" role="menuitem">About</a>
-          </li>
-          <li role="none" class="menu-modal__list-item">
-            <a href="#" class="menu-modal__link--small" role="menuitem">Privacy & Terms</a>
-          </li>
-          <li role="none" class="menu-modal__list-item">
-            <a href="#" class="menu-modal__link--small" role="menuitem">Contact us</a>
-          </li>
-        </ul>
-    </Transition>
-    </div>
-  </header>
+	<header
+		:class="{ 'full-screen': isMenuOpen }"
+		role="banner"
+		aria-label="Header"
+	>
+		<div :class="['header', { 'header--light': isMenuOpen }]">
+			<div class="header__nav-container">
+				<TheHamburgerMenu @toggle-menu="toggleMenu" :isMenuOpen="isMenuOpen" :isAriaExpanded="isAriaExpanded" />
+				<button class="search" title="Search an item in our store">
+					<img
+						src="https://cdn.shopify.com/s/files/1/0576/8364/0503/t/4/assets/icon-search.static.svg?v=50573694"
+						alt="Search an item in our store"
+						class="search__image"
+					/>
+				</button>
+			</div>
+			<a href="/" title="Go back to the home page">
+				<img
+					src="@/assets/svg/logo-full.svg"
+					alt="The Figma Store"
+					class="logo"
+				/>
+			</a>
+			<div class="header__cart-container">
+				<a href="#" class="location" title="Select your location">
+					<img
+						src="@/assets/svg/location-icon.svg"
+						alt="Select your location"
+					/>
+				</a>
+				<button class="cart" title="View the items in your cart">0</button>
+			</div>
+		</div>
+		<div class="menu-modal">
+			<Transition>
+				<ul
+					id="main-menu"
+					class="menu-modal__list"
+					role="menubar"
+					aria-labelledby="main-menu"
+					aria-label="Figma Store"
+					v-if="isMenuOpen"
+				>
+					<li role="none" class="menu-modal__list-item">
+						<a href="#" class="menu-modal__link" role="menuitem">Shop</a>
+					</li>
+					<li role="none" class="menu-modal__list-item">
+						<a href="#" class="menu-modal__link" role="menuitem">About</a>
+					</li>
+					<li role="none" class="menu-modal__list-item">
+						<a href="#" class="menu-modal__link--small" role="menuitem"
+							>Privacy & Terms</a
+						>
+					</li>
+					<li role="none" class="menu-modal__list-item">
+						<a href="#" class="menu-modal__link--small" role="menuitem"
+							>Contact us</a
+						>
+					</li>
+				</ul>
+			</Transition>
+		</div>
+	</header>
 </template>
 
 <script>
 import { ref, computed } from "vue";
+import TheHamburgerMenu from "../components/TheHamburgerMenu.vue";
 
 export default {
+  components: {
+    TheHamburgerMenu,
+  },
   setup() {
     const isAriaExpanded = ref(false);
     const isMenuOpen = ref(false);
