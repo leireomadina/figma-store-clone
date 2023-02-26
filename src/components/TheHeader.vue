@@ -33,45 +33,19 @@
 				<button class="cart" title="View the items in your cart">0</button>
 			</div>
 		</div>
-		<div class="menu-modal">
-			<Transition>
-				<ul
-					id="main-menu"
-					class="menu-modal__list"
-					role="menubar"
-					aria-labelledby="main-menu"
-					aria-label="Figma Store"
-					v-if="isMenuOpen"
-				>
-					<li role="none" class="menu-modal__list-item">
-						<a href="#" class="menu-modal__link" role="menuitem">Shop</a>
-					</li>
-					<li role="none" class="menu-modal__list-item">
-						<a href="#" class="menu-modal__link" role="menuitem">About</a>
-					</li>
-					<li role="none" class="menu-modal__list-item">
-						<a href="#" class="menu-modal__link--small" role="menuitem"
-							>Privacy & Terms</a
-						>
-					</li>
-					<li role="none" class="menu-modal__list-item">
-						<a href="#" class="menu-modal__link--small" role="menuitem"
-							>Contact us</a
-						>
-					</li>
-				</ul>
-			</Transition>
-		</div>
+    <TheModalMenu :isMenuOpen="isMenuOpen" />
 	</header>
 </template>
 
 <script>
 import { ref, computed } from "vue";
 import TheHamburgerMenu from "../components/TheHamburgerMenu.vue";
+import TheModalMenu from "../components/TheModalMenu.vue";
 
 export default {
   components: {
     TheHamburgerMenu,
+    TheModalMenu,
   },
   setup() {
     const isAriaExpanded = ref(false);
@@ -117,50 +91,6 @@ export default {
   }
 }
 
-.hamburger-menu {
-  display: flex;
-
-  &__btn {
-    cursor: pointer;
-    background-color: transparent;
-    border: transparent;
-  }
-
-  &__container {
-    width: 37px;
-    height: 37px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: 2px solid $color-dark;
-  }
-
-  &__line {
-    width: 13px;
-    border: 1px solid $color-dark;
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.5s ease-in-out;
-
-    &:not(:last-of-type) {
-      margin-bottom: 2px;
-    }
-  }
-
-  &__cross {
-    width: 15px;
-    border: 1px solid $color-dark;
-    transform: rotate(45deg) translate(1px, 1px);
-  }
-  &__cross2 {
-    width: 15px;
-    border: 1px solid $color-dark;
-    transform: rotate(315deg);
-  }
-}
-
 .search {
   cursor: pointer;
   background-color: transparent;
@@ -194,47 +124,6 @@ export default {
   &:hover {
     background-color: $color-dark;
     color: $color-light;
-  }
-}
-.menu-modal {
-  height: auto;
-  width: 100%;
-  z-index: 1;
-  overflow: auto;
-  background-color: $color-light;
-  flex-grow: 1;
-
-  &__list {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    row-gap: toRem(14px);
-    padding: toRem(60px) toRem(30px);
-  }
-
-  &__list-item:nth-of-type(2) {
-    margin-bottom: toRem(60px);
-  }
-
-  &__link {
-    font-size: toRem(45px);
-    font-weight: bold;
-    text-decoration: none;
-
-    &--small {
-      font-family: "White Regular";
-      font-size: toRem(18px);
-      font-weight: normal;
-      text-decoration: none;
-
-      &:visited {
-        color: $color-dark;
-      }
-    }
-
-    &:visited {
-      color: $color-dark;
-    }
   }
 }
 
