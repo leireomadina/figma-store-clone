@@ -9,95 +9,21 @@
       @mousemove="moveSlider"
     >
       <ul class="hero__list" ref="innerSlider">
-        <li class="hero__list-item">
-          <a href="#">
-            <object
-              type="image/svg+xml"
-              :data="svgOne"
-              class="hero__image"
-              alt=""
-            />
-          </a>
-        </li>
-        <li class="hero__list-item">
-          <a href="#">
-            <object
-              type="image/svg+xml"
-              :data="svgTwo"
-              class="hero__image"
-              alt=""
-            />
-          </a>
-        </li>
-        <li class="hero__list-item">
-          <a href="#">
-            <object
-              type="image/svg+xml"
-              :data="svgThree"
-              class="hero__image"
-              alt=""
-            />
-          </a>
-        </li>
-        <li class="hero__list-item">
-          <a href="#">
-            <object
-              type="image/svg+xml"
-              :data="svgFour"
-              class="hero__image"
-              alt=""
-            />
-          </a>
-        </li>
-        <li class="hero__list-item">
-          <a href="#">
-            <object
-              type="image/svg+xml"
-              :data="svgFive"
-              class="hero__image"
-              alt=""
-            />
-          </a>
-        </li>
-        <li class="hero__list-item">
-          <a href="#">
-            <object
-              type="image/svg+xml"
-              :data="svgSix"
-              class="hero__image"
-              alt=""
-            />
-          </a>
-        </li>
-        <li class="hero__list-item">
-          <a href="#">
-            <object
-              type="image/svg+xml"
-              :data="svgSeven"
-              class="hero__image"
-              alt=""
-            />
-          </a>
-        </li>
-        <li class="hero__list-item">
-          <a href="#">
-            <object
-              type="image/svg+xml"
-              :data="svgEight"
-              class="hero__image"
-              alt=""
-            />
-          </a>
-        </li>
-        <!-- <a href="#"><embed :src="svgOne" alt="d" /></a> -->
-        <!-- <a href="#"><embed src="../assets/svg/hero/1.svg" alt="d" /></a> -->
-        <!-- <img :src="getImageUrl('1')" /> -->
+        <HeroListItem
+          v-for="heroSlide in heroSlides"
+          :key="heroSlide.id"
+          :id="heroSlide.id"
+          :url="heroSlide.url"
+          :svg="heroSlide.svg"
+        />
       </ul>
     </div>
   </section>
 </template>
 
 <script>
+import HeroListItem from "./base/HeroListItem.vue";
+
 import svgOne from "../assets/svg/hero/1.svg?data";
 import svgTwo from "../assets/svg/hero/2.svg?data";
 import svgThree from "../assets/svg/hero/3.svg?data";
@@ -111,6 +37,9 @@ import { ref, onMounted } from "vue";
 // import * as slider from "../../src/js/draggable-slider";
 
 export default {
+  components: {
+    HeroListItem,
+  },
   setup() {
     const slider = ref(null);
     const innerSlider = ref(null);
@@ -125,7 +54,6 @@ export default {
     // let numberOfSlides;
 
     const triggerSlider = (event) => {
-      // console.log("pressed");
       isSliderPressed = true;
       xPositionStart.value = event.offsetX - innerSlider.value.offsetLeft;
       console.log("xPositionStart:", xPositionStart.value);
@@ -134,13 +62,11 @@ export default {
     };
 
     const hoverSlider = () => {
-      // console.log("hovering");
       slider.value.style.cursor = "grab";
     };
 
     const removePressed = () => {
       isSliderPressed = false;
-      // console.log("isSliderPressed:", isSliderPressed);
     };
 
     window.addEventListener("mouseup", removePressed);
@@ -148,7 +74,7 @@ export default {
     const moveSlider = (event) => {
       if (!isSliderPressed) return;
       xPosition.value = event.offsetX;
-      console.log("xPosition:", xPosition.value);
+      // console.log("xPosition:", xPosition.value);
       // console.log("xPositionStart:", xPositionStart.value);
 
       innerSlider.value.style.transform = `translateX(${
@@ -174,23 +100,57 @@ export default {
     onMounted(() => {
       slider.value;
       innerSlider.value;
-      // console.log(slider);
-      // console.log(innerSlider);
     });
 
     // const getImageUrl = (name) => {
     //   return new URL(`../assets/svg/hero/${name}.svg`, import.meta.url).href;
     // };
 
+    const heroSlides = [
+      {
+        id: 1,
+        url: "#",
+        svg: svgOne,
+      },
+      {
+        id: 2,
+        url: "#",
+        svg: svgTwo,
+      },
+      {
+        id: 3,
+        url: "#",
+        svg: svgThree,
+      },
+      {
+        id: 4,
+        url: "#",
+        svg: svgFour,
+      },
+      {
+        id: 5,
+        url: "#",
+        svg: svgFive,
+      },
+      {
+        id: 6,
+        url: "#",
+        svg: svgSix,
+      },
+      {
+        id: 7,
+        url: "#",
+        svg: svgSeven,
+      },
+      {
+        id: 8,
+        url: "#",
+        svg: svgEight,
+      },
+    ];
+
     return {
-      svgOne,
-      svgTwo,
-      svgThree,
-      svgFour,
-      svgFive,
-      svgSix,
-      svgSeven,
-      svgEight,
+      heroSlides,
       slider,
       innerSlider,
       triggerSlider,
