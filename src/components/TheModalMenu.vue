@@ -9,7 +9,7 @@
         aria-label="Figma Store"
         v-if="isMenuOpen"
       >
-        <ListMenuItem
+        <ModalMenuItem
           v-for="menuItem in menuItems"
           :key="menuItem.id"
           :id="menuItem.id"
@@ -23,11 +23,11 @@
 </template>
 
 <script>
-import ListMenuItem from "./base/ListMenuItem.vue";
+import ModalMenuItem from "./base/ModalMenuItem.vue";
 
 export default {
   components: {
-    ListMenuItem,
+    ModalMenuItem,
   },
   props: {
     isMenuOpen: {
