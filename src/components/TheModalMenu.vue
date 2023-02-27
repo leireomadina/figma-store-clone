@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import ModalMenuItem from "./base/ModalMenuItem.vue";
+import ModalMenuItem from "./ModalMenuItem.vue";
 
 export default {
   components: {

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import HeroListItem from "./base/HeroListItem.vue";
+import HeroListItem from "./HeroListItem.vue";
 
 import svgOne from "../assets/svg/hero/1.svg?data";
 import svgTwo from "../assets/svg/hero/2.svg?data";
