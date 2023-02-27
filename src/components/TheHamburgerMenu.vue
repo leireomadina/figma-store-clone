@@ -12,29 +12,29 @@
     >
       <div class="hamburger-menu__container">
         <span
+          v-if="!isMenuOpen"
           class="hamburger-menu__line"
           aria-hidden="true"
-          v-if="!isMenuOpen"
         ></span>
         <span
+          v-if="!isMenuOpen"
           class="hamburger-menu__line"
           aria-hidden="true"
-          v-if="!isMenuOpen"
         ></span>
         <span
+          v-if="!isMenuOpen"
           class="hamburger-menu__line"
           aria-hidden="true"
-          v-if="!isMenuOpen"
         ></span>
         <span
+          v-if="isMenuOpen"
           class="hamburger-menu__cross"
           aria-hidden="true"
-          v-if="isMenuOpen"
         ></span>
         <span
+          v-if="isMenuOpen"
           class="hamburger-menu__cross2"
           aria-hidden="true"
-          v-if="isMenuOpen"
         ></span>
       </div>
     </button>

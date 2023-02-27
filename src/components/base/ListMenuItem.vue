@@ -1,6 +1,5 @@
 <template>
   <li role="none" class="menu-item">
-    <!-- <a :href="url" :class="linkStyle" role="menuitem">{{ text }}</a> -->
     <a
       :href="url"
       :class="['menu-item__link', { 'menu-item__link--small': isSmall }]"

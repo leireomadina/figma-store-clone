@@ -12,10 +12,10 @@
         <ListMenuItem
           v-for="menuItem in menuItems"
           :key="menuItem.id"
+          :id="menuItem.id"
           :text="menuItem.text"
           :url="menuItem.url"
           :isSmall="menuItem.isSmall"
-          :id="menuItem.id"
         />
       </ul>
     </Transition>

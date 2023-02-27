@@ -1,40 +1,43 @@
-<!-- eslint-disable prettier/prettier -->
 <template>
-	<header
-		:class="{ 'full-screen': isMenuOpen }"
-		role="banner"
-		aria-label="Header"
-	>
-		<div :class="['header', { 'header--light': isMenuOpen }]">
-			<div class="header__nav-container">
-				<TheHamburgerMenu @toggle-menu="toggleMenu" :isMenuOpen="isMenuOpen" :isAriaExpanded="isAriaExpanded" />
-				<button class="search" title="Search an item in our store">
-					<img
-						src="https://cdn.shopify.com/s/files/1/0576/8364/0503/t/4/assets/icon-search.static.svg?v=50573694"
-						alt="Search an item in our store"
-						class="search__image"
-					/>
-				</button>
-			</div>
-			<a href="/" title="Go back to the home page">
-				<img
-					src="@/assets/svg/logo-full.svg"
-					alt="The Figma Store"
-					class="logo"
-				/>
-			</a>
-			<div class="header__cart-container">
-				<a href="#" class="location" title="Select your location">
-					<img
-						src="@/assets/svg/location-icon.svg"
-						alt="Select your location"
-					/>
-				</a>
-				<button class="cart" title="View the items in your cart">0</button>
-			</div>
-		</div>
+  <header
+    :class="{ 'full-screen': isMenuOpen }"
+    role="banner"
+    aria-label="Header"
+  >
+    <div :class="['header', { 'header--light': isMenuOpen }]">
+      <div class="header__nav-container">
+        <TheHamburgerMenu
+          @toggle-menu="toggleMenu"
+          :isMenuOpen="isMenuOpen"
+          :isAriaExpanded="isAriaExpanded"
+        />
+        <button class="search" title="Search an item in our store">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0576/8364/0503/t/4/assets/icon-search.static.svg?v=50573694"
+            alt="Search an item in our store"
+            class="search__image"
+          />
+        </button>
+      </div>
+      <a href="/" title="Go back to the home page">
+        <img
+          src="@/assets/svg/logo-full.svg"
+          alt="The Figma Store"
+          class="logo"
+        />
+      </a>
+      <div class="header__cart-container">
+        <a href="#" class="location" title="Select your location">
+          <img
+            src="@/assets/svg/location-icon.svg"
+            alt="Select your location"
+          />
+        </a>
+        <button class="cart" title="View the items in your cart">0</button>
+      </div>
+    </div>
     <TheModalMenu :isMenuOpen="isMenuOpen" />
-	</header>
+  </header>
 </template>
 
 <script>
