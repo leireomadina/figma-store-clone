@@ -17,12 +17,14 @@
           :svg="heroSlide.svg"
         />
       </ul>
+      <TheBadgeItem />
     </div>
   </section>
 </template>
 
 <script>
 import HeroListItem from "./HeroListItem.vue";
+import TheBadgeItem from "./TheBadgeItem.vue";
 
 import svgOne from "../assets/svg/hero/1.svg?data";
 import svgTwo from "../assets/svg/hero/2.svg?data";
@@ -39,6 +41,7 @@ import { ref, onMounted } from "vue";
 export default {
   components: {
     HeroListItem,
+    TheBadgeItem,
   },
   setup() {
     const slider = ref(null);
