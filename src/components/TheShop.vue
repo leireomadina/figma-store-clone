@@ -1,12 +1,12 @@
 <template>
-  <base-section id="shop"> Section content </base-section>
+	<base-section id="shop"> Section content </base-section>
 </template>
 
 <script>
-import BaseSection from "./BaseSection.vue";
+import BaseSection from './BaseSection.vue'
 export default {
-  components: {
-    BaseSection,
-  },
-};
+	components: {
+		BaseSection,
+	},
+}
 </script>

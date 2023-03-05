@@ -1,17 +1,17 @@
 <template>
-  <default-layout>
-    <RouterView />
-  </default-layout>
+	<default-layout>
+		<RouterView />
+	</default-layout>
 </template>
 
 <script>
-import { RouterView } from "vue-router";
-import DefaultLayout from "./layouts/DefaultLayout.vue";
+import { RouterView } from 'vue-router'
+import DefaultLayout from './layouts/DefaultLayout.vue'
 
 export default {
-  components: {
-    RouterView,
-    DefaultLayout,
-  },
-};
+	components: {
+		RouterView,
+		DefaultLayout,
+	},
+}
 </script>
