@@ -1,13 +1,13 @@
 <template>
-  <TheHero />
+	<TheHero />
 </template>
 
 <script>
-import TheHero from "../components/TheHero.vue";
+import TheHero from '../components/TheHero.vue'
 
 export default {
-  components: {
-    TheHero,
-  },
-};
+	components: {
+		TheHero,
+	},
+}
 </script>

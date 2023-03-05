@@ -1,26 +1,27 @@
 // core
-@import "../styles/core/typography.scss";
-@import "../styles/core/normalize.scss";
-@import "../styles/core/reset.scss";
+@import '../styles/core/typography.scss';
+@import '../styles/core/normalize.scss';
+@import '../styles/core/reset.scss';
 
-html, body {
-  height: 100%;
+html,
+body {
+	height: 100%;
 }
 
 body {
-  font-family: 'White inktrap bold', Arial, sans-serif;
-  line-height: 1.6;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: 'White inktrap bold', Arial, sans-serif;
+	line-height: 1.6;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 #app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 main {
-  flex-grow: 1;
+	flex-grow: 1;
 }
