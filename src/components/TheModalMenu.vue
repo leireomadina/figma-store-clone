@@ -58,8 +58,8 @@ export default {
       },
       {
         id: 4,
-        text: "About",
-        url: "Contact us",
+        text: "Contact us",
+        url: "#",
         isSmall: true,
       },
     ];
