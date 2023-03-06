@@ -172,7 +172,6 @@ export default {
   height: 100%;
   position: relative;
   padding: 0 toRem(20px);
-  overflow: hidden;
   background-color: $color-yellow;
 
   &__list {
