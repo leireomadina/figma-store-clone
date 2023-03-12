@@ -1,21 +1,22 @@
 <template>
 	<header class="shop-header">
-		<h2
-			:class="[
-				'shop-header__title',
-				{ 'shop-header__title--hovered': isFilterHovered },
-			]"
-		>
-			Figma's
+		<h2 class="shop-header__title">
+			<span :class="{ 'shop-header__title--opaque': isFilterHovered }"
+				>Figma's
+			</span>
 			<img class="shop-header__icon" :src="star" alt="Star" role="img" />
-			collection
+			<span :class="{ 'shop-header__title--opaque': isFilterHovered }"
+				>collection
+			</span>
 			<img
 				class="shop-header__icon"
 				:src="hourglass"
 				alt="Hourglass"
 				role="img"
 			/>
-			of
+			<span :class="{ 'shop-header__title--opaque': isFilterHovered }"
+				>of
+			</span>
 			<span
 				@mouseover="activateHoverEffect"
 				@mouseleave="removeHoverEffect"
@@ -23,7 +24,9 @@
 				>layers</span
 			>
 			<img class="shop-header__icon" :src="zigzag" alt="Zigzag" role="img" />
-			and
+			<span :class="{ 'shop-header__title--opaque': isFilterHovered }"
+				>and
+			</span>
 			<img
 				class="shop-header__icon"
 				:src="dots"
@@ -36,16 +39,27 @@
 				class="shop-header__title--highlighted"
 				>components</span
 			>
-			<img class="shop-header__icon" :src="sun" alt="Sun" role="img" /> for you
-			<img class="shop-header__icon" :src="comet" alt="Comet" role="img" /> and
-			<img class="shop-header__icon" :src="snake" alt="Snake" role="img" /> your
+			<img class="shop-header__icon" :src="sun" alt="Sun" role="img" />
+			<span :class="{ 'shop-header__title--opaque': isFilterHovered }"
+				>for you
+			</span>
+			<img class="shop-header__icon" :src="comet" alt="Comet" role="img" />
+			<span :class="{ 'shop-header__title--opaque': isFilterHovered }"
+				>and
+			</span>
+			<img class="shop-header__icon" :src="snake" alt="Snake" role="img" />
+			<span :class="{ 'shop-header__title--opaque': isFilterHovered }"
+				>your
+			</span>
 			<img
 				class="shop-header__icon"
 				:src="triangle"
 				alt="Triangle"
 				role="img"
 			/>
-			friends
+			<span :class="{ 'shop-header__title--opaque': isFilterHovered }"
+				>friends
+			</span>
 		</h2>
 	</header>
 </template>
@@ -103,12 +117,9 @@ export default {
 			}
 		}
 
-		&--hovered {
-			color: rgb(190, 190, 190);
-
-			& span {
-				color: $color-dark;
-			}
+		&--opaque {
+			opacity: 0.5;
+			transition: all 0.3s ease-out;
 		}
 
 		@include tablet {
