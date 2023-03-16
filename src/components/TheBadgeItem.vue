@@ -1,11 +1,9 @@
 <template>
-  <a href="#" title="Go to our About page" class="badge"> 100% PROFITS FUND REFORESTATION </a>
+  <a href="#" title="Go to our About page" class="badge">*</a>
+  <img src="@/assets/svg/badge/yellow-hand.svg" alt="yellow hand" />
 </template>
 
-<script>
-// import svgMainHand from "..assets/svg/badge/main-hand.svg?data";
-// import svgHighFiveHand from "../assets/svg/badge/highfive-hand.svg?data";
-</script>
+<script></script>
 
 <style lang="scss">
 .badge {
