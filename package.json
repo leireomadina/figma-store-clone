@@ -5,7 +5,9 @@
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview --port 4173",
-		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
 		"vue": "^3.2.37",
@@ -14,13 +16,16 @@
 	},
 	"devDependencies": {
 		"@rushstack/eslint-patch": "^1.1.0",
-		"@vitejs/plugin-vue": "^3.0.1",
+		"@vitejs/plugin-vue": "^3.2.0",
 		"@vue/eslint-config-prettier": "^7.0.0",
+		"@vue/test-utils": "^2.3.1",
 		"eslint": "^8.5.0",
 		"eslint-plugin-vue": "^9.0.0",
+		"jsdom": "^21.1.1",
 		"prettier": "^2.5.1",
 		"sass": "^1.54.0",
 		"sass-loader": "^13.0.2",
-		"vite": "^3.0.1"
+		"vite": "^3.0.1",
+		"vitest": "^0.29.2"
 	}
 }
