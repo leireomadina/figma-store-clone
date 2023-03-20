@@ -1,6 +1,6 @@
 <template>
   <a href="#" title="Go to our About page" class="badge">*</a>
-  <img src="@/assets" alt="logo svg" />
+  <img src="@/assets/svg/badge/purple-hand.svg" alt="logo svg" />
 </template>
 
 <script></script>
