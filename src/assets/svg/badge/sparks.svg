@@ -5,7 +5,8 @@
 
   //Styles must change
   <defs>
-    <style>.cls-1{fill:#0b0b0b;}.cls-2{fill:#080808;}</style>
+    <style>
+    .cls-1{fill:#0b0b0b;}.cls-2{fill:#080808;}</style>
   </defs>
 
   //left spark trace
