@@ -1,9 +1,9 @@
 <template>
-  <footer role="footer" aria-label="Footer">This is the footer</footer>
+	<footer role="footer" aria-label="Footer">This is the footer</footer>
 </template>
 
 <style lang="scss">
 footer {
-  color: blue;
+	color: blue;
 }
 </style>
