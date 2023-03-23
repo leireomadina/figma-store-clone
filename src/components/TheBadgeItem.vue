@@ -2,7 +2,7 @@
 	<a href="#" title="Go to our About page" class="badge">
 		<svg
 			id="badge-item"
-			width="300px"
+			width="220px"
 			height="auto"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 211.52 211.52"
@@ -269,7 +269,7 @@
 				/>
 
 				<path
-					class="spark-_center"
+					class="spark_center"
 					id="spark_center"
 					data-name="trace center"
 					transform="translate(-258.09 -398.58)"
@@ -293,14 +293,14 @@
 <style lang="scss">
 #badge-item {
 	position: absolute;
-	top: 75%;
-	left: 65%;
+	top: 82%;
+	left: 70%;
 }
 .badge-circle {
 	fill: #fff;
 }
 .badge-text {
-	font-size: 18px;
+	font-size: toRem(18px);
 	font-family: Whyte-Bold, Whyte;
 	font-weight: 700;
 }
@@ -313,7 +313,7 @@
 
 #yellow-hand_group {
 	transform: translate(60px, 75px);
-	width: 200px;
+	width: toRem(200px);
 }
 
 #badge-item:hover #yellow-hand_group {
@@ -441,6 +441,17 @@
 	}
 	to {
 		transform: translate(53px, 75px);
+	}
+}
+
+/* boceto mediaquerie*/
+@media (max-width: 640px) {
+	#badge-item {
+		width: 150px;
+		height: auto;
+		position: absolute;
+		top: 70%;
+		left: 60%;
 	}
 }
 </style>
