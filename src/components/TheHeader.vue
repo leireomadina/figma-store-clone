@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import TheHamburgerMenu from '../components/TheHamburgerMenu.vue'
 import TheModalMenu from '../components/TheModalMenu.vue'
 
@@ -53,6 +53,7 @@ export default {
 	setup() {
 		const isAriaExpanded = ref(false)
 		const isMenuOpen = ref(false)
+		const isScrollListenerActive = ref(false)
 
 		const convertToString = computed(function () {
 			return isAriaExpanded.value.toString()
@@ -62,6 +63,24 @@ export default {
 			isMenuOpen.value = !isMenuOpen.value
 			isAriaExpanded.value = !isAriaExpanded.value
 		}
+
+		watch(isMenuOpen, (newValue) => {
+			newValue
+				? (isScrollListenerActive.value = true)
+				: (isScrollListenerActive.value = false)
+		})
+
+		const scrollListener = () => {
+			if (window.scrollY !== 0) {
+				isMenuOpen.value = false
+			}
+		}
+
+		watch(isScrollListenerActive, (isActive) => {
+			isActive
+				? window.addEventListener('scroll', scrollListener)
+				: window.removeEventListener('scroll', scrollListener)
+		})
 
 		return {
 			isAriaExpanded,
