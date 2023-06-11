@@ -56,9 +56,6 @@ export default {
 			default: false,
 		},
 	},
-	setup(props, ctx) {
-		ctx.emit('toggleMenu')
-	},
 }
 </script>
 
