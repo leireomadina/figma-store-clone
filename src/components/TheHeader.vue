@@ -19,7 +19,7 @@
 					/>
 				</button>
 			</div>
-			<a href="/" title="Go back to the home page">
+			<a href="/" title="Go back to the home page" class="header__logo-link">
 				<img
 					src="@/assets/svg/logo-full.svg"
 					alt="The Figma Store"
@@ -27,12 +27,13 @@
 				/>
 			</a>
 			<div class="header__cart-container">
-				<a href="#" class="location" title="Select your location">
+				<button class="location" title="Choose your location">
 					<img
 						src="@/assets/svg/location-icon.svg"
-						alt="Select your location"
+						alt="Choose your location"
+						class="location__image"
 					/>
-				</a>
+				</button>
 				<button class="cart" title="View the items in your cart">0</button>
 			</div>
 		</div>
@@ -41,7 +42,7 @@
 </template>
 
 <script>
-import { ref, computed, watch } from 'vue'
+import { ref, watchEffect } from 'vue'
 import TheHamburgerMenu from '../components/TheHamburgerMenu.vue'
 import TheModalMenu from '../components/TheModalMenu.vue'
 
@@ -53,31 +54,20 @@ export default {
 	setup() {
 		const isAriaExpanded = ref(false)
 		const isMenuOpen = ref(false)
-		const isScrollListenerActive = ref(false)
-
-		const convertToString = computed(function () {
-			return isAriaExpanded.value.toString()
-		})
 
 		const toggleMenu = () => {
 			isMenuOpen.value = !isMenuOpen.value
 			isAriaExpanded.value = !isAriaExpanded.value
 		}
 
-		watch(isMenuOpen, (newValue) => {
-			newValue
-				? (isScrollListenerActive.value = true)
-				: (isScrollListenerActive.value = false)
-		})
-
-		const scrollListener = () => {
-			if (window.scrollY !== 0) {
-				isMenuOpen.value = false
+		watchEffect(() => {
+			const scrollListener = () => {
+				if (window.scrollY !== 0) {
+					isMenuOpen.value = false
+				}
 			}
-		}
 
-		watch(isScrollListenerActive, (isActive) => {
-			isActive
+			isMenuOpen.value
 				? window.addEventListener('scroll', scrollListener)
 				: window.removeEventListener('scroll', scrollListener)
 		})
@@ -85,7 +75,6 @@ export default {
 		return {
 			isAriaExpanded,
 			isMenuOpen,
-			convertToString,
 			toggleMenu,
 		}
 	},
@@ -127,6 +116,11 @@ export default {
 .logo {
 	max-width: 160px;
 	height: auto;
+}
+
+.location {
+	background-color: transparent;
+	border: none;
 }
 
 .search,
