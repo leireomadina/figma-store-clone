@@ -1,4 +1,15 @@
 import puppeteer from 'puppeteer'
+import fs from 'fs'
+
+const createImageFolder = () => {
+	const folderName = 'images'
+
+	if (!fs.existsSync(folderName)) {
+    fs.mkdirSync(folderName);
+  }
+}
+
+createImageFolder();
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -18,7 +29,7 @@ import puppeteer from 'puppeteer'
 	await page.waitForNavigation()
 	await page.waitForSelector('.product-block')
 
-	const products = await page.evaluate(() => {
+	const products = await page.evaluate(async() => {
 		const productCards = document.querySelectorAll('.product-block')
 		const productCardsArr = []
 		
@@ -30,6 +41,16 @@ import puppeteer from 'puppeteer'
 			product.isNew = productCard.querySelector('.new') ? true : false
 			product.image = productCard.querySelector('img.image').getAttribute('src')
 			productCardsArr.push(product)
+
+			const imageUrl = product.image;
+
+      // Download and save the image
+      const imageBuffer = await fetch(imageUrl).then((response) => response.arrayBuffer());
+      const imageName = `${product.name.replace(/\s/g, '_')}.png`;
+      const imagePath = path.join('images', imageName);
+      fs.writeFileSync(imagePath, Buffer.from(imageBuffer));
+
+      product.imagePath = imagePath;
 		}
 		
 		return productCardsArr
