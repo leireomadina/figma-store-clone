@@ -62,7 +62,7 @@ createImageFolder()
 
 	// Download product images
 	for (const product of products) {
-		const imageUrl = product.image
+		const imageUrl = product.image.startsWith('http') ? product.image : `https:${product.image}`
 		const imageName = `${product.name.replace(/\s/g, '_')}.png`
 		const imagePath = path.join('images', imageName)
 
