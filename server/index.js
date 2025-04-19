@@ -51,8 +51,7 @@ createImageFolder()
 		for (let productCard of productCards) {
 			const product = {}
 			product.name = productCard.querySelector('.title').innerText
-			const priceText = productCard.querySelector('.price').innerText
-			product.price = parseFloat(priceText.replace('$', ''))
+			product.price = productCard.querySelector('.price').innerText
 			product.isNew = !!productCard.querySelector('.new')
 			product.image = productCard.querySelector('img.image').getAttribute('src')
 			productCardsArr.push(product)
