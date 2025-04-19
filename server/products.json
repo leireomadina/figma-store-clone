@@ -1,0 +1,182 @@
+[
+  {
+    "name": "The Prompt Magazine",
+    "price": "€13,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/F_20240620_Figma_ThePrompt_Issue2_5685_600x.png?v=1721147511"
+  },
+  {
+    "name": "Chunky Glyph Tee",
+    "price": "€22,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_4914_600x.jpg?v=1719341698"
+  },
+  {
+    "name": "All Smiles Nalgene",
+    "price": "€17,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_5503_600x.jpg?v=1719341195"
+  },
+  {
+    "name": "Independent Corners Tee",
+    "price": "€22,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_5116_859eaff4-b3e6-4bd7-84cd-3c82f1b66a4d_600x.jpg?v=1719507726"
+  },
+  {
+    "name": "Doodle Tee",
+    "price": "€22,95",
+    "isNew": false,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_4506_600x.jpg?v=1719341872"
+  },
+  {
+    "name": "Figma Doodle Socks",
+    "price": "€10,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_4966_600x.jpg?v=1719341945"
+  },
+  {
+    "name": "Wildflower Hoodie",
+    "price": "€40,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_5283_1200x.jpg?v=1719342792"
+  },
+  {
+    "name": "Inkblot Tee",
+    "price": "€22,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/InkblotTee_1200x.png?v=1719342423"
+  },
+  {
+    "name": "Chunky Glyph Cap",
+    "price": "€17,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_5087_600x.jpg?v=1719341467"
+  },
+  {
+    "name": "Local Styles Crewneck",
+    "price": "€35,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_5603_600x.jpg?v=1719342498"
+  },
+  {
+    "name": "All Smiles Tee",
+    "price": "€22,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_4764_be63c001-0c88-468c-9a18-59aff3703031_600x.jpg?v=1719507934"
+  },
+  {
+    "name": "Gestures Longsleeve",
+    "price": "€26,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_5395_600x.jpg?v=1719342092"
+  },
+  {
+    "name": "Doodle Hoodie",
+    "price": "€40,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_4883_600x.jpg?v=1719341772"
+  },
+  {
+    "name": "Chunky Glyph Longsleeve",
+    "price": "€26,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_5201_b938b1fb-eeec-426b-9d55-926a2848f98a_600x.jpg?v=1719509034"
+  },
+  {
+    "name": "Butterfly Tote",
+    "price": "€22,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_4993_600x.jpg?v=1719342599"
+  },
+  {
+    "name": "Make your Mark(er) Pack",
+    "price": "€19,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/25_b1571a20-9cbe-4ed6-985e-c6b389a36afa_600x.png?v=1719338624"
+  },
+  {
+    "name": "Tidy Up Crewneck",
+    "price": "€35,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/TidyUpBack_1200x.png?v=1719342731"
+  },
+  {
+    "name": "Garden Crew Socks",
+    "price": "€10,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/20240619_Figma_Store_5034_1200x.jpg?v=1719342029"
+  },
+  {
+    "name": "On brand hat",
+    "price": "€22,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/products/figma-store_on-brand-hat_01_600x.jpg?v=1670519718"
+  },
+  {
+    "name": "Tidy Up Tee",
+    "price": "€22,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/products/figma-store_tidy-up-tee_01_600x.jpg?v=1670516715"
+  },
+  {
+    "name": "Shape Up Tee",
+    "price": "€17,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/products/figma-store_shape-up-tee_013_600x.png?v=1678114580"
+  },
+  {
+    "name": "The Figma Store gift card",
+    "price": "€22,27",
+    "isNew": false,
+    "image": "//store-eu.figma.com/cdn/shop/products/GiftCard-PLP_600x.png?v=1641323873"
+  },
+  {
+    "name": "Figma sticker pack",
+    "price": "€0,95",
+    "isNew": false,
+    "image": "//store-eu.figma.com/cdn/shop/products/Figma-Store-1375_600x.jpg?v=1643228355"
+  },
+  {
+    "name": "Figma logo hat",
+    "price": "€17,95",
+    "isNew": false,
+    "image": "//store-eu.figma.com/cdn/shop/products/Figma-Store-414-Edit_600x.jpg?v=1636599254"
+  },
+  {
+    "name": "Figma Hoodie",
+    "price": "€40,95",
+    "isNew": false,
+    "image": "//store-eu.figma.com/cdn/shop/products/Figma-Store-1469_600x.jpg?v=1636598538"
+  },
+  {
+    "name": "Meet Me in the Browser Tee",
+    "price": "€22,95",
+    "isNew": false,
+    "image": "//store-eu.figma.com/cdn/shop/products/Figma-Store-3600-Edit_600x.jpg?v=1636599551"
+  },
+  {
+    "name": "Figma Wordmark Tee",
+    "price": "€16,95",
+    "isNew": false,
+    "image": "//store-eu.figma.com/cdn/shop/products/Figma-Store-3814_600x.jpg?v=1636599369"
+  },
+  {
+    "name": "Comment Socks Light Gray",
+    "price": "€8,95",
+    "isNew": false,
+    "image": "//store-eu.figma.com/cdn/shop/products/Figma-Store-4136_600x.jpg?v=1636599515"
+  },
+  {
+    "name": "Pentool Pin",
+    "price": "€1,95",
+    "isNew": false,
+    "image": "//store-eu.figma.com/cdn/shop/files/FigmaStore_ProductImages_NewHire_PenToolPin_600x.png?v=1716927268"
+  },
+  {
+    "name": "Black Toolbar Hoodie",
+    "price": "€40,95",
+    "isNew": true,
+    "image": "//store-eu.figma.com/cdn/shop/files/FigmaStore_ProductImages_CoreCollection_ToolbarHoodie-01_600x.png?v=1725470232"
+  }
+]

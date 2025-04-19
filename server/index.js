@@ -60,6 +60,8 @@ createImageFolder()
 		return productCardsArr
 	})
 
+	fs.writeFileSync('products.json', JSON.stringify(products, null, 2), 'utf-8')
+
 	// Download product images
 	for (const product of products) {
 		const imageUrl = product.image.startsWith('http') ? product.image : `https:${product.image}`
