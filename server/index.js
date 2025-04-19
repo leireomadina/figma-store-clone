@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer'
 import fs from 'fs'
 import path from 'path'
 import fetch from 'node-fetch'
+import os from 'os'
 
 // Create the folder where images will be stored
 const createImageFolder = () => {
@@ -12,9 +13,22 @@ const createImageFolder = () => {
 createImageFolder()
 
 ;(async () => {
+	// Determine the operating system and set the executable path accordingly
+	const isMac = os.platform() === 'darwin'
+	const isLinux = os.platform() === 'linux'
+
+	// Set the correct executablePath based on the OS
+	let executablePath = ''
+	if (isMac) {
+		executablePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+	} else if (isLinux) {
+		executablePath = '/usr/bin/google-chrome'
+	}
+
+	// Launch Puppeteer with the appropriate settings for each OS
 	const browser = await puppeteer.launch({
 		headless: false, // Set to true to run in headless mode
-		executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', // Path to Chrome (Mac)
+		executablePath: executablePath,
 		args: ['--no-sandbox', '--disable-setuid-sandbox'],
 	})
 
