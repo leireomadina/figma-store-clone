@@ -9,7 +9,8 @@
   "author": "Leire Ordeñana",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^21.1.0"
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^24.6.1"
   },
   "type": "module"
 }
