@@ -53,7 +53,9 @@ createImageFolder()
 			product.name = productCard.querySelector('.title').innerText
 			product.price = productCard.querySelector('.price').innerText
 			product.isNew = !!productCard.querySelector('.new')
-			product.image = productCard.querySelector('img.image').getAttribute('src')
+			product.imageSrc = productCard.querySelector('img.image').getAttribute('src')
+			const imageName = product.name.replace(/\s/g, '_') + '.png'
+            product.imagePath = 'images/' + imageName
 			productCardsArr.push(product)
 		}
 
@@ -64,7 +66,7 @@ createImageFolder()
 
 	// Download product images
 	for (const product of products) {
-		const imageUrl = product.image.startsWith('http') ? product.image : `https:${product.image}`
+		const imageUrl = product.imageSrc.startsWith('http') ? product.imageSrc : `https:${product.imageSrc}`
 		const imageName = `${product.name.replace(/\s/g, '_')}.png`
 		const imagePath = path.join('images', imageName)
 
